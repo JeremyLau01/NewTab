@@ -59,18 +59,18 @@ function startTime() {
   document.getElementById('txt').innerHTML =
   f;
   var t = setTimeout(startTime, 500);
-  newImage();
 }
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
-function newImage() {
+
+function newImg(){
   var d = new Date();
   var month = d.getMonth();
   var day = d.getDate();
   var photoindex = (((month+1)*day)%50)+1;
-  setDocumentVariable('--back-img-url', url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+photoindex+".jpg"));
+  document.documentElement.style.setProperty('--back-img-url', url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+photoindex+".jpg"));
 }
 </script>
 </head>
