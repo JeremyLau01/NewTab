@@ -14,9 +14,6 @@ body, html {
 }
   
 .bg {
-  /* The image used */
-  background-image: url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/12.jpg");
-
   /* Full height */
   height: 100%; 
 
@@ -59,6 +56,13 @@ function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
+function changeImg() {
+  var d = new Date();
+  var month = d.getMonth();
+  var day = d.getDate();
+  var photoindex = (((month+1)*day)%50)+1;
+  var urlPhoto = "https://raw.githubusercontent.com/JeremyLau01/IMG_New_Tab/master/BackgroundImages/"+photoindex+".jpg";
+}
 </script>
 </head>
 <body onload="startTime()">
@@ -68,7 +72,16 @@ function checkTime(i) {
 </div>
 
 
-<div class="bg"></div>
+<div class="bg"><img id="myImg" src="img" alt="image"></div>
 
+  <script>
+    var d = new Date();
+    var month = d.getMonth();
+    var day = d.getDate();
+    var photoindex = (((month+1)*day)%50)+1;
+    var urlPhoto = "https://raw.githubusercontent.com/JeremyLau01/IMG_New_Tab/master/BackgroundImages/"+photoindex+".jpg";
+    document.getElementById("myImg").src = urlPhoto;
+  </script>
+  
 </body>
 </html>
