@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("https://raw.githubusercontent.com/JeremyLau01/IMG_New_Tab/blob/master/Lato/Lato-Regular.ttf");
+}
+  
+.bg {
+  /* The image used */
+  background-image: url("https://raw.githubusercontent.com/JeremyLau01/IMG_New_Tab/blob/master/BackgroundImages/12.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1100%;
+  font-family: Lato, Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+}
+
+</style>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  m = checkTime(m);
+  f = ((h+ 11) % 12 + 1) + ":" + m;
+  document.getElementById('txt').innerHTML =
+  f;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</head>
+<body onload="startTime()">
+
+<div class="centered">
+ <div id="txt"></div>  
+</div>
+
+
+<div class="bg"></div>
+
+</body>
+</html>
