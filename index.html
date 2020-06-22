@@ -3,6 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+:root{
+  --back-img-url: url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/1.jpg");
+}
+
 body, html {
   height: 100%;
   margin: 0;
@@ -15,7 +20,7 @@ body, html {
   
 .bg {
   /* The image used */
-  background-image: url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/1.jpg");
+  background-image: var(--back-img-url);
 
   /* Full height */
   height: 100%; 
@@ -54,10 +59,18 @@ function startTime() {
   document.getElementById('txt').innerHTML =
   f;
   var t = setTimeout(startTime, 500);
+  newImage();
 }
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
+}
+function newImage() {
+  var d = new Date();
+  var month = d.getMonth();
+  var day = d.getDate();
+  var photoindex = (((month+1)*day)%50)+1;
+  setDocumentVariable('--back-img-url', url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+photoindex+".jpg"));
 }
 </script>
 </head>
