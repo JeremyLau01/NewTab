@@ -70,7 +70,7 @@ function newImage() {
   var month = d.getMonth();
   var day = d.getDate();
   var photoindex = (((month+1)*day)%50)+1;
-  document.documentElement.style.setProperty('--my-variable-name', ('--back-img-url', url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+photoindex+".jpg")););
+  setDocumentVariable('--back-img-url', url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+photoindex+".jpg"));
 }
 </script>
 </head>
