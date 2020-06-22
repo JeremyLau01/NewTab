@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
 body, html {
   height: 100%;
   margin: 0;
@@ -11,7 +10,17 @@ body, html {
 
 @font-face {
     font-family: Lato;
-    src: url("https://raw.githubusercontent.com/JeremyLau01/newtab2/blob/master/Lato-Regular.ttf");
+    src: url("https://raw.githubusercontent.com/JeremyLau01/IMG_New_Tab/blob/master/Lato-Regular.ttf");
+}
+  
+.bg {
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -42,23 +51,10 @@ function startTime() {
   document.getElementById('txt').innerHTML =
   f;
   var t = setTimeout(startTime, 500);
-  newImg();
 }
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
-}
-
-function newImg(){
-  var d = new Date();
-  var month = d.getMonth();
-  var day = d.getDate();
-  var photoindex = (((month+1)*day)%50)+1;
-  var textindex = "https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+"tree"+".jpg";
-  var z = new Image();
-  z.src = textindex;
-  document.documentElement.style.setProperty('--back-img-url', textindex);
-  document.body.background=z.src;
 }
 </script>
 </head>
@@ -66,7 +62,7 @@ function newImg(){
 
 <div class="centered">
  <div id="txt"></div>  
+<div class="bg">
+  <img src="https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/1.jpg" alt="">
 </div>
-
-</body>
-</html>
+</div>
