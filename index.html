@@ -4,10 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-:root {
---back-img-url: url("https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/1.jpg");
-}
-
 body, html {
   height: 100%;
   margin: 0;
@@ -58,13 +54,11 @@ function newImg(){
   var month = d.getMonth();
   var day = d.getDate();
   var photoindex = (((month+1)*day)%50)+1;
-  var textindex = "https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+photoindex+".jpg";
+  var textindex = "https://raw.githubusercontent.com/JeremyLau01/newtab2/master/BackgroundImages/"+"tree"+".jpg";
   var z = new Image();
   z.src = textindex;
   document.documentElement.style.setProperty('--back-img-url', textindex);
   document.body.background=z.src;
-
-
 }
 </script>
 </head>
