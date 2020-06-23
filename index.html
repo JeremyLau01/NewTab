@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  
 <style>
 body, html {
   height: 100%;
@@ -40,8 +41,9 @@ width: 100%;
   font-weight:normal;
   font-style:normal;
 }
-
 </style>
+  
+  
 <script>
 function startTime() {
   var today = new Date();
@@ -57,13 +59,6 @@ function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
-function changeImg() {
-  var d = new Date();
-  var month = d.getMonth();
-  var day = d.getDate();
-  var photoindex = (((month+1)*day)%50)+1;
-  var urlPhoto = "https://raw.githubusercontent.com/JeremyLau01/NewTab/master/BackgroundImages/"+photoindex+".jpg";
-}
 </script>
 </head>
 <body onload="startTime()">
@@ -71,8 +66,7 @@ function changeImg() {
 <div class="centered">
  <div id="txt"></div>  
 </div>
-
-
+  
 <img class="bg" id="myImg" src="img" alt="image">
 
   <script>
